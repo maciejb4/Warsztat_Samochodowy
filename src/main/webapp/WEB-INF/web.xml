@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+
+    //SERVLET DOMOWY
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>pl.coderslab.controller.HomePage</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/views/home.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+
+
+    //ORDERS
+    <servlet>
+        <servlet-name>OrderSave</servlet-name>
+        <servlet-class>pl.coderslab.controller.Order.OrderSaveToDb</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/order-forms/OrderSaveToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderSave</servlet-name>
+        <url-pattern>/order_save</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>OrderDelete</servlet-name>
+        <servlet-class>pl.coderslab.controller.Order.OrderDelete</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/order-forms/OrderDelete.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderDelete</servlet-name>
+        <url-pattern>/order_delete</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>OrderLoadAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.Order.OrderLoadAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/order-forms/OrderLoadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderLoadAll</servlet-name>
+        <url-pattern>/orders_load_all</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderUpdate</servlet-name>
+        <servlet-class>pl.coderslab.controller.Order.ServletOrderUpdate</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/order-forms/OrderUpdate.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderUpdate</servlet-name>
+        <url-pattern>/order_update</url-pattern>
+    </servlet-mapping>
+
+
+    //EMPOLYEE
+    <servlet>
+        <servlet-name>EmployeeSave</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeSaveToDb</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeSave</servlet-name>
+        <url-pattern>/employee_save</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>EmployeeDelete</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeDel</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeDel.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeDelete</servlet-name>
+        <url-pattern>/employee_delete</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>EmployeeLoadAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeLoadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeLoadAll</servlet-name>
+        <url-pattern>/employee_load_all</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeeUpdate</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeUpdate</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeUpdate.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeUpdate</servlet-name>
+        <url-pattern>/employee_update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeeOrders</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeOrders</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeAllOrders.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeOrders</servlet-name>
+        <url-pattern>/employee_orders</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeeRecent</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeRecent</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeRecent.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeRecent</servlet-name>
+        <url-pattern>/employee_recent</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>EmployeeDetails</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeDetails</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeDetails.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeDetails</servlet-name>
+        <url-pattern>/employee_details</url-pattern>
+    </servlet-mapping>
+
+
+    //VEHICLE
+    <servlet>
+        <servlet-name>VehicleSave</servlet-name>
+        <servlet-class>pl.coderslab.controller.Vehicle.VehicleSaveToDb</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/saveToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleSave</servlet-name>
+        <url-pattern>/vehicle_save</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VehicleDelete</servlet-name>
+        <servlet-class>pl.coderslab.controller.Vehicle.VehicleDelete</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/deleteFromDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleDelete</servlet-name>
+        <url-pattern>/vehicle_delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Vehicle1LoadAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.Vehicle.VehicleLoadAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/loadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Vehicle1LoadAll</servlet-name>
+        <url-pattern>/vehicle_load_all</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VehicleLoadByCustomerId</servlet-name>
+        <servlet-class>pl.coderslab.controller.Vehicle.VehicleLoadByCustomerId</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/vehicleLoadByCustomerId.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleLoadByCustomerId</servlet-name>
+        <url-pattern>/vehicle_load_by_customer_id</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VehicleUpdate</servlet-name>
+        <servlet-class>pl.coderslab.controller.Vehicle.VehicleUpdate</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/vehicleUpdate.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleUpdate</servlet-name>
+        <url-pattern>/vehicle_update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VehicleHistory</servlet-name>
+        <servlet-class>pl.coderslab.controller.Vehicle.VehicleHistory</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/VehicleHistory.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleHistory</servlet-name>
+        <url-pattern>/vehicle_history</url-pattern>
+    </servlet-mapping>
+
+    //CUSTOMER SAVE
+
+    <servlet>
+        <servlet-name>CustomerSave</servlet-name>
+        <servlet-class>pl.coderslab.controller.Customer.CustomerSaveToDb</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Customer-forms/saveToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerSave</servlet-name>
+        <url-pattern>/customer_save</url-pattern>
+    </servlet-mapping>
+
+    //CUSTOMER DELETE
+
+    <servlet>
+        <servlet-name>CustomerDelete</servlet-name>
+        <servlet-class>pl.coderslab.controller.Customer.CustomerDelete</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Customer-forms/Delete.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerDelete</servlet-name>
+        <url-pattern>/customer_delete</url-pattern>
+    </servlet-mapping>
+
+    //CUSTOMER LOAD ALL
+
+    <servlet>
+        <servlet-name>CustomerLoadAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.Customer.CustomerLoadAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Customer-forms/loadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerLoadAll</servlet-name>
+        <url-pattern>/customer_load_all</url-pattern>
+    </servlet-mapping>
+
+    //CUSTOMER UPDATE
+
+    <servlet>
+        <servlet-name>CustomerUpdate</servlet-name>
+        <servlet-class>pl.coderslab.controller.Customer.CustomerUpdate</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Customer-forms/editCustomer.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerUpdate</servlet-name>
+        <url-pattern>/CustomerUpdate</url-pattern>
+    </servlet-mapping>
+
+
+    //CUSTOMER FOUND BY SURNAME
+
+    <servlet>
+        <servlet-name>CustomerFound</servlet-name>
+        <servlet-class>pl.coderslab.controller.Customer.CustomerFound</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Customer-forms/foundCustomer.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerFound</servlet-name>
+        <url-pattern>/customer_found</url-pattern>
+    </servlet-mapping>
+
+
+    //STATUS
+    <servlet>
+        <servlet-name>StatusSave</servlet-name>
+        <servlet-class>pl.coderslab.controller.Status.StatusSaveToDb</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Status-forms/statusSaveToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatusSave</servlet-name>
+        <url-pattern>/status_save</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>StatusDelete</servlet-name>
+        <servlet-class>pl.coderslab.controller.Status.StatusDelete</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Status-forms/statusDelete.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatusDelete</servlet-name>
+        <url-pattern>/status_delete</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>StatusLoadAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.Status.StatusLoadAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Status-forms/statusLoadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatusLoadAll</servlet-name>
+        <url-pattern>/status_load_all</url-pattern>
+    </servlet-mapping>
+
+
+    //RAPORTY
+
+    <servlet>
+        <servlet-name>RaportHome</servlet-name>
+        <servlet-class>pl.coderslab.controller.Raport.RaportHome</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/raports-forms/raportHome.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RaportHome</servlet-name>
+        <url-pattern>/raport_home</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Raport1</servlet-name>
+        <servlet-class>pl.coderslab.controller.Raport.Raport1form</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/raports-forms/raport1Form.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Raport1</servlet-name>
+        <url-pattern>/raport_1_form</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Raport1load</servlet-name>
+        <servlet-class>pl.coderslab.controller.Raport.Raport1load</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/raports-forms/raport1Load.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Raport1load</servlet-name>
+        <url-pattern>/raport_1_load</url-pattern>
+    </servlet-mapping>
+
+
+    //FILTRY
+    <filter>
+
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>pl.coderslab.filters.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>charsetEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>contentType</param-name>
+            <param-value>text/html</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
+
+</web-app>
